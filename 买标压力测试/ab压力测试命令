@@ -1,0 +1,12 @@
+500个并发执行10000次
+
+
+本地立即投资
+ab -c 500 -n 10000 -p ryx_Immediate_investment -T application/x-www-form-urlencoded "http://api.ppmiao.com/user/payWayList.json"
+
+142服务器
+获取注册验证码
+ab -c 100 -n 5000 -p "ryx_Immediate_investment" -T application/x-www-form-urlencoded "https://api.ppmiao.com/user/getSmsCode.json"
+
+立即投资
+ab -c 1 -n 1 -p "ryx_Immediate_investment" -T application/x-www-form-urlencoded "https://api.ppmiao.com/user/payWayList.json"
